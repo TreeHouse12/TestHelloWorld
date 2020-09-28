@@ -1,3 +1,4 @@
-FROM scratch
-ADD hello /
-CMD ["/hello"]
+FROM ubuntu:18.04
+COPY . /app
+RUN make /app
+CMD python /app/test.py
