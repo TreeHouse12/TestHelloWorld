@@ -8,11 +8,11 @@ python:
   - "3.8.5"
 
 install:
-  - docker build -t helloworld .
-  - docker run -d -p 127.0.0.1:80:4000 --name helloword helloworld 
+  - docker build -t hello .
+  - docker run -d -p 127.0.0.1:80:4000 --name hello hello
 
 script:
-  - docker ps | grep -i helloworld 
+  - docker ps | grep -i hello
   - python test.py
 
 after_deploy:
