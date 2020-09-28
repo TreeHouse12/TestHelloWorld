@@ -1,9 +1,19 @@
+services:
+  - docker
+
 language: python
 
 python:
 
   - "3.8.5"
 
-script:
+install:
+  - docker build -t myapp .
+  - docker run -d -p 127.0.0.1:80:4000 --name myapp myapp
 
-  - python hello.py
+script:
+  - docker ps | grep -i myapp
+  - python test.py
+
+after_deploy:
+  - "curl http://localhost:80"
