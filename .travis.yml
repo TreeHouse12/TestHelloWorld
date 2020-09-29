@@ -9,4 +9,4 @@ script:
   - docker ps | grep -i Hello World
 
 after_deploy:
-  - "curl http://localhost:80" | grep "Hello World"
+  - "curl http://localhost:80 | grep Hello World"
