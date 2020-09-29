@@ -7,4 +7,6 @@ install:
 
 script:
   - docker ps
-  - curl "http://localhost:8080" | grep Hello
+  - python3 -m pip install requests
+  - python3 test.py
+  - curl "http://localhost:8080" | grep "Hello World"
