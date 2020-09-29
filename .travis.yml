@@ -7,4 +7,4 @@ install:
 
 script:
   - docker ps
-  - "curl \"http://localhost:8080\" | grep Hello World"
+  - curl "http://localhost:8080" | grep Hello
