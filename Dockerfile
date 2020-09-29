@@ -2,7 +2,6 @@ FROM ubuntu:18.04
 RUN apt-get -yqq update
 RUN apt-get -yqq install python3-pip python3-dev curl gnupg
 RUN apt-get install build-essential
-RUN python3 -m pip install requests
 COPY . /app
 RUN make /app
 CMD python3 /app/test.py
