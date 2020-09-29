@@ -3,7 +3,7 @@ services:
 
 install:
   - docker build -t simple-nginx .
-  - docker run --rm -it -p 8080:80 simple-nginx 
+  - docker run -d -p 8080:80 simple-nginx 
 
 script:
   - docker ps | grep -i Hello World
