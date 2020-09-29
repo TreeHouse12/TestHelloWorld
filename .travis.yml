@@ -3,10 +3,8 @@ services:
 
 install:
   - docker build -t simple-nginx .
-  - docker run -d -p 8080:80 simple-nginx 
+  - docker run -d -p 80:80 simple-nginx 
 
 script:
   - docker ps
-  - python3 -m pip install requests
-  - python3 test.py
-  - curl "http://localhost:8080" | grep "Hello World"
+  - curl "http://localhost:80" | grep "Hello World"
