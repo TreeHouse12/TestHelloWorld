@@ -6,7 +6,7 @@ install:
   - docker run --rm -it -p 8080:80 simple-nginx 
 
 script:
-  - docker ps | grep -i "Hello World" 
+  - docker ps | grep -i Hello World
 
 after_deploy:
   - "curl http://localhost:80" | grep "Hello World"
